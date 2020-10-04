@@ -1,0 +1,220 @@
+.header{
+    grid-column: 1/-1;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    padding: 3rem 5rem;
+
+
+    &__logo{
+        height: 80%;
+        display: block;
+        @media only screen and (max-width:$bt-small){
+        height: 5rem;
+        }
+    }
+
+    &__nav{
+
+        &-list{
+            list-style: none;
+            display: flex;
+        }
+
+        &-item{
+            
+
+            &:not(:last-child){
+                padding-right: 2.5rem;
+            }
+
+            a:link,
+            a:visited{
+                text-decoration: none;
+                color:var(--color-primary-dark);
+            }
+        }
+    }
+}
+
+
+.section{
+    
+    &__start{
+    grid-column: 1/-1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    padding: 5rem 0;
+    padding: 3rem 5rem;
+
+
+    &-main{
+        display: grid;
+        grid-template-rows: repeat(3, min-content);
+        grid-row-gap: 2rem;
+
+        @media only screen and (max-width:$bt-small){
+            grid-column: 1/-1;
+            
+        }
+
+    }
+
+    &-illustration{
+        width: 100%;
+
+        @media only screen and (max-width:$bt-small){
+            grid-column: 1/-1;
+            grid-row: 1/2;
+        }
+
+        &--2{
+            width: 80%;
+            justify-self: center;
+            align-self: center;
+        }
+    }
+
+
+  }
+
+  &__start--2{
+      background-image: url(../images/bg-curve-desktop.svg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+  }
+    &__text{
+        color:var(--color-primary-dark);
+        display: block;
+
+        &--1{
+            width: 85%;
+        }
+        
+    }
+
+    &__form{
+
+        &-input{
+            border: 1px solid var(--color-primary-dark);
+            padding: .7rem 0rem .7rem 1.3rem;
+            border-radius: .4rem;
+            width: 55%;
+            background-color: transparent;
+            font-weight: 400;
+            font-family: inherit;
+            font-size: 1.4rem;
+            display: inline-block;
+
+            &--light{
+                background-color: var(--color-tertiary-1);
+                width: 100%;
+                margin-bottom: 1rem;
+            }
+            &:focus{
+                outline: none;
+                box-shadow: 0 .5rem 1rem rgba(#000, 0.2);
+            }
+        }
+        &-input::-moz-placeholder{
+            color: var(--color-tertiary-2);
+        }
+
+
+    }
+
+}
+
+
+.testimonial{
+
+    &__card{
+
+        background-color: var(--color-white);
+        border-radius: 1rem;
+        width: 60%;
+        padding: 2rem;
+        display: grid;
+        grid-template-rows: auto;
+        grid-row-gap: 1.2rem;
+        box-shadow: 0 1rem 2rem rgba(#000, 0.2);
+
+        &-logo{
+            height: 1.7rem;
+        }
+
+        &-text{
+            font-size: 1.2rem;
+        }
+
+    }
+
+    &__user{
+        &-box{
+            display: grid;
+            grid-template-columns: min-content max-content;
+            grid-template-rows: min-content min-content;
+            align-items: center;
+            grid-column-gap: 1rem;
+        }
+        &-img{
+            height: 3.5rem;
+            width: 3.5rem;
+            border-radius: 50%;
+            grid-row: 1/-1;
+
+        }
+
+        &-name{
+            font-size: 1.4;
+            font-family: var(--font-heading);
+            font-weight: 700;
+        }
+        &-designation{
+            font-size: 1.2rem;
+        }
+    }
+
+
+}
+
+.section__early{
+
+    grid-column: 1/-1;
+    padding: 5rem 5rem;
+    background-color: var(--color-primary-desaturated);
+    color: var(--color-tertiary-1);
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-items: end;
+
+    @media only screen and (max-width:$bt-small){
+            grid-row-gap: 1rem;
+        }
+
+    
+    justify-content: end;
+
+    &-left{
+        grid-column: 1/2;
+        @media only screen and (max-width:$bt-small){
+            grid-column: 1/-1;
+            // grid-row: 1/2;
+        }
+    }
+    &-right{
+        grid-column: 2/-1;
+        justify-self:end;
+        @media only screen and (max-width:$bt-small){
+            grid-column: 1/-1;
+            // grid-row: 1/2;
+            justify-self:center;
+        }
+    }
+}

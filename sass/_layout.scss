@@ -1,0 +1,51 @@
+.footer{
+    grid-column: 1/-1;
+    background-color: var(--color-primary-dark);
+    padding: 5rem;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+
+    color: var(--color-white);
+    
+
+    
+
+
+    &__contact{
+        display: grid;
+        grid-template-rows: repeat(3, max-content);
+        grid-template-columns: repeat(2, max-content);
+        grid-row-gap: 1rem;
+    }
+
+    &__main{
+        grid-column: 1/-1;
+    }
+
+    &__quicklinks,
+    &__legal{
+        align-self: start;
+        justify-self: center;
+    }
+
+    
+}
+
+.links{
+    list-style: none;
+}
+
+.links .item{
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.icon{
+    height: 2rem;
+    width: 2rem;
+    grid-column: 1/2;
+    margin-right: 1rem;
+}

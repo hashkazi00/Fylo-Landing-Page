@@ -1,0 +1,142 @@
+
+:root {
+
+    --color-primary-dark:hsl(243, 87%, 12%);
+    --color-primary-desaturated:hsl(238, 22%, 44%);
+
+
+    --color-secondary-1:hsl(224, 93%, 58%);
+    --color-secondary-2:hsl(170, 45%, 43%);
+    
+
+    --color-tertiary-1:hsl(240, 75%, 98%);
+    --color-tertiary-2:hsl(0, 0%, 75%);
+
+
+    --color-white:hsl(0, 0%, 100%);
+    --color-black: hsl(0,0,0);
+
+    --font-body:'Open Sans', sans-serif;
+    --font-heading: 'Raleway', sans-serif;
+
+}
+
+
+$bt-largest: 77em; //1216/16 = 76em
+$bt-large:68.75em; //1100/16 = 68.75em
+$bt-medium: 56.25em; //900/16 = 56.25em
+$bt-small: 37.5em ;//600/16 = 37.5em
+$bt-smallest: 31.25em; //500/16 = 31.25em
+
+
+html{
+    box-sizing:border-box;
+    font-size: 62.5%; //1rem = 10px (10/16 = 62.5%)
+
+    @media only screen and (max-width:$bt-small){
+        font-size: 50%;   
+    }
+}
+
+*,
+*::before,
+*::after{
+    margin:0;
+    padding:0;
+    box-sizing:inherit;
+}
+
+body{
+    font-family: var(--font-body);
+    line-height: 1.6;
+    font-size: 1.5rem;
+    // background-color: var(--color-tertiary-1);
+}
+
+.container{
+    display: grid;
+    // padding: 3rem 5rem;
+    grid-template-columns: repeat(2, minmax(50rem,1fr));
+
+    @media only screen and (max-width:$bt-small){
+        grid-template-columns: repeat(1, minmax(50rem,1fr));
+        grid-template-rows: repeat(auto-fit, min-content);
+
+    }
+}
+
+.heading-1{
+    font-family: var(--font-heading);
+    color: var(--color-primary-dark);
+    font-size: 2.6rem;
+    font-weight: 700;
+    &--light{
+        color: var(--color-tertiary-1);
+    }
+
+    &--large{
+    font-size: 3.5rem;
+
+    }
+}
+
+.btn{   
+
+
+    border: none;
+    background-color: var(--color-secondary-1);
+    padding: .8rem 3.5rem;
+    border-radius: .4rem;
+    font-weight: 400;
+    font-family: inherit;
+    font-size: 1.4rem;
+    color: var(--color-tertiary-1);
+    cursor: pointer;
+    transition: all 0.2s;
+        transform: scale(1);
+
+
+
+
+    &:focus,
+    &:active{
+        outline: none;
+        box-shadow: 0rem 0.5rem 1rem rgba(0,0,0, 0.2);
+    }
+
+    &:active{
+        transform: scale(.95);
+    }
+
+    &__icon{
+        margin-left: .5rem;
+    }
+}
+
+.btn-2{
+    
+    border: none;
+    border-bottom: 1px solid var(--color-secondary-2);
+    justify-self: start;
+    background-color: transparent;
+    padding:0.5rem 0 0.5rem 0;
+    display: flex;
+    align-items: center;
+    color: var(--color-secondary-2);
+    transition: all 0.2s;
+        transform: scale(1);
+
+
+
+    &:actice,
+    &:focus{
+        outline: none;
+        box-shadow: 0rem 0.5rem 1rem rgba(0,0,0, 0.2);
+
+    }
+
+    &:active{
+        transform: scale(.95);
+
+    }
+}
